@@ -1,5 +1,6 @@
 package com.jonkisz.kotlinforandroid
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.github.salomonbrys.kodein.*
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity(), AnkoLogger, KodeinInjected {
         inject(appKodein())
 
         relativeLayout {
-            editText {
+            val messageText = editText {
                 id = 1
                 hint = message
             }.lparams {
@@ -33,8 +34,9 @@ class MainActivity : AppCompatActivity(), AnkoLogger, KodeinInjected {
 
                 id = 2
                 onClick {
-                    messageSender.send(Message("I`m  almost done"))
-                    toast("Message on the way")
+                    //messageSender.send(Message("I`m  almost done"))
+                    startActivity<SecondActivity>("com.jonkisz.kotlinforandroid.MESSAGE" to messageText.text.toString())
+
                 }
 
             }.lparams {
