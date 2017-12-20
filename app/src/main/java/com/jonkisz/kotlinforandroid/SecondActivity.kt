@@ -68,6 +68,17 @@ class SecondActivity : AppCompatActivity() {
                 alignParentLeft()
                 alignParentRight()
             }
+
+            button("Open gallery") {
+                id = 5
+                onClick {
+                    startActivity<GalleryActivity>()
+                }
+            }.lparams {
+                below(4)
+                alignParentLeft()
+                alignParentRight()
+            }
         }
     }
 }

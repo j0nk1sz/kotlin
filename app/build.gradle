@@ -20,6 +20,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+//    testOptions {
+//        unitTests.returnDefaultValues = true
+//    }
 }
 
 dependencies {
@@ -30,8 +34,14 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile "org.jetbrains.anko:anko:$anko_version"
-    compile "com.github.salomonbrys.kodein:kodein:$kodein_version"
-    testCompile "com.github.salomonbrys.kodein:kodein-conf:$kodein_version"
-    compile "com.github.salomonbrys.kodein:kodein-android:$kodein_version"
+    implementation "org.jetbrains.anko:anko:$anko_version"
+    //implementation "com.jakewharton.timber:timber:$timber_version"
+    implementation "com.github.salomonbrys.kodein:kodein:$kodein_version"
+    testImplementation "com.github.salomonbrys.kodein:kodein-conf:$kodein_version"
+    implementation "com.github.salomonbrys.kodein:kodein-android:$kodein_version"
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxjavaVersion"
 }
